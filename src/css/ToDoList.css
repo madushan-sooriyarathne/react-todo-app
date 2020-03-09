@@ -14,6 +14,17 @@
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
+@media only screen and (max-width: 600px) {
+  .ToDoList {
+    min-height: 80vh;
+  }
+}
+
+@media only screen and (max-width: 28.125em) {
+  .ToDoList {
+    min-height: 90vh;
+  }
+}
 
 .ToDoList-heading {
   align-self: start;

@@ -21,7 +21,6 @@ export default class EditForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.submit(this.state.todo, this.props.id);
-    console.log("here in Edit Form");
     this.setState({ todo: "" });
   }
 

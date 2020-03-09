@@ -22,25 +22,27 @@ export default class ToDoList extends Component {
   }
 
   // Todo Methods
-  async delete(id) {
-    await this.setState({
-      todoList: this.state.todoList.filter(todo => todo.id !== id)
+  delete(id) {
+    this.setState(st => {
+      st.todoList = st.todoList.filter(todo => todo.id !== id);
+      // delete from local storage
+      this.storageObj.setStorage(st.todoList);
+      return st;
     });
-
-    // delete from local storage
-    this.storageObj.setStorage(this.state.todoList);
   }
 
   done(id) {
     this.setState(st => {
-      st.todoList = st.todoList.map(todo => {
-        if (id === todo.id) {
-          todo.isDone = true;
-        }
-        return todo;
-      });
-      this.storageObj.setStorage(st.todoList);
-      return st;
+      let updatedState = {
+        todoList: st.todoList.map(todo => {
+          if (id === todo.id) {
+            return { ...todo, isDone: !todo.isDone };
+          }
+          return todo;
+        })
+      };
+      this.storageObj.setStorage(updatedState.todoList);
+      return updatedState;
     });
   }
 
@@ -59,9 +61,12 @@ export default class ToDoList extends Component {
   }
 
   // Form Methods
-  async submit(todo) {
-    await this.setState({ todoList: [...this.state.todoList, todo] });
-    this.storageObj.setStorage(this.state.todoList);
+  submit(newTodo) {
+    this.setState(st => {
+      const updatedState = { todoList: [...st.todoList, newTodo] };
+      this.storageObj.setStorage(updatedState.todoList);
+      return updatedState;
+    });
   }
 
   editSubmit(editedTodo, id) {

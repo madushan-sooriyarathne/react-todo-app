@@ -1,0 +1,48 @@
+.EditForm-container {
+  min-height: 7rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.EditForm {
+  justify-self: end;
+
+  display: grid;
+  grid-template-columns: 75% 25%;
+  width: 100%;
+  justify-content: start;
+}
+
+.EditForm-input {
+  padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  outline: none;
+  width: 100%;
+  border: 2px solid black;
+  margin-right: auto;
+}
+
+.EditForm-input:focus {
+  border: 2px solid gray;
+}
+
+.EditForm-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.7rem;
+  font-family: inherit;
+  background: black;
+  color: white;
+  outline: none;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.EditForm-btn:hover {
+  color: black;
+  background-color: transparent;
+}

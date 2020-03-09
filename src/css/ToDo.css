@@ -1,0 +1,82 @@
+.ToDo {
+  min-height: 7rem;
+  padding: 0.5rem 1rem;
+
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  margin-bottom: auto;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.ToDo:hover {
+  transform: translateY(-0.5rem);
+}
+
+.ToDo-btns {
+  justify-self: end;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ToDo-btns > *:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.ToDo-finished,
+.ToDo-notFinished {
+  font-size: 1.8rem;
+  font-family: inherit;
+  font-weight: 400;
+  margin-right: auto;
+}
+
+.ToDo-finished {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.ToDo-btn {
+  padding: 0.3rem 0.7rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+.ToDo-delete {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.ToDo-delete:hover {
+  color: red;
+  background-color: transparent;
+}
+
+.ToDo-done {
+  background-color: green;
+  border: 1px solid green;
+}
+
+.ToDo-done:hover {
+  color: green;
+  background-color: transparent;
+}
+
+.ToDo-edit {
+  background-color: rgb(6, 60, 97);
+  border: 1px solid rgb(6, 60, 97);
+}
+
+.ToDo-edit:hover {
+  color: rgb(6, 60, 97);
+  background-color: transparent;
+}
